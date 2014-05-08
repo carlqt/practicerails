@@ -3,8 +3,8 @@ $(document).ready(function(){
 
 	$.ajax({
 		type: 'GET',
-		dataType: 'json',
-		url: 'http://localhost:3000/posts.json',
+		dataType: 'jsonp',
+		url: 'http://practicerails123.herokuapp.com/posts.json?callback',
 		success: function(data, status, xhr) {
 			$.each(data, function(key, val){ 
 				console.log(data);
