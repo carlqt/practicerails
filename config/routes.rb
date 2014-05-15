@@ -1,7 +1,10 @@
 PracticeRails::Application.routes.draw do
+  get '/posts/rails-test', to: 'posts#test'
+  
   resources :posts
 
   get "practice/index"
+  get '/new', to: 'practice#new'
   root "practice#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

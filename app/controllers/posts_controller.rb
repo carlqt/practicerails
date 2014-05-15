@@ -6,9 +6,12 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     posts = @posts.to_json
+
     respond_to do |format|
-      format.json {render :json => posts, :callback => params[:callback]}
+      format.json { render :json => @posts }
     end
+
+
   end
 
   # GET /posts/1
@@ -63,6 +66,15 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url }
       format.json { head :no_content }
+    end
+  end
+
+  def test
+    # respond_to do |format|
+    #   format.html
+    # end
+    respond_to do |format|
+      format.js 
     end
   end
 
